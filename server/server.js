@@ -1,4 +1,5 @@
 var express = require('express');
+var cool = require('cool-ascii-faces');
 var app = express();
 
 // set the port of our application
@@ -9,7 +10,7 @@ var port = process.env.PORT || 8080;
 app.set('view engine', 'ejs');
 
 // make express look in the public directory for assets (css/js/img)
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '../client/public'));
 
 // set the home page route
 app.get('/', function(req, res) {
@@ -20,4 +21,5 @@ app.get('/', function(req, res) {
 
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
+    console.log(cool());
 });
